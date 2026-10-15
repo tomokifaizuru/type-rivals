@@ -1,39 +1,39 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,interactive-widget=resizes-content">
-<meta name="theme-color" content="#7cc8ff"><title>Type Royale</title>
+<meta name="theme-color" content="#070b1f"><link rel="icon" type="image/png" href="logo/icon192.png?v=1.04"><link rel="apple-touch-icon" href="logo/icon192.png?v=1.04"><title>Type Rivals</title>
 <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;height:100%;overflow:hidden;background:#dff1ff;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#23324a}
+html,body{margin:0;height:100%;overflow:hidden;background:#070b1f;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#e6ecff}
 #app{position:fixed;left:0;top:0;width:100%;height:100%}
 canvas{display:block;width:100%;height:100%;touch-action:none}
 #ti{position:absolute;left:0;bottom:0;width:1px;height:1px;opacity:0;border:0;padding:0;font-size:16px}
-.ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:linear-gradient(180deg,rgba(124,200,255,.92),rgba(255,214,236,.92));text-align:center;padding:20px}
+.ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:radial-gradient(ellipse at 50% 20%,rgba(27,35,80,.94),rgba(7,11,31,.97) 70%);text-align:center;padding:20px}
 .hid{display:none!important}
-h1{margin:0;font-size:clamp(34px,9vw,60px);color:#fff;letter-spacing:1px;text-shadow:0 4px 0 #4a8fd8,0 8px 20px rgba(40,80,160,.3)}
-.sub{color:#35507a;font-weight:600}
-.btn{border:0;border-radius:16px;padding:14px 34px;font-size:19px;font-weight:700;background:#fff;color:#2c6fc4;box-shadow:0 5px 0 #9cc4ee;min-width:220px;cursor:pointer}
-.btn.p{background:#ff7aa8;color:#fff;box-shadow:0 5px 0 #d4507f}
-.btn:active{transform:translateY(3px);box-shadow:0 2px 0 #9cc4ee}
-.card{background:#fff;border-radius:18px;padding:18px 20px;max-width:420px;text-align:left;line-height:1.5;box-shadow:0 8px 24px rgba(40,80,160,.2)}
-.field{border:0;border-radius:14px;padding:12px 16px;font-size:18px;width:220px;text-align:center;box-shadow:inset 0 0 0 2px #9cc4ee;outline:none;color:#23324a}.field.sm{width:120px;text-transform:uppercase;letter-spacing:3px;font-weight:700}.row{display:flex;gap:10px}.btn.sm{min-width:90px;padding:12px 18px}#menu{gap:10px;overflow:auto}.pl{display:flex;justify-content:space-between;gap:20px;padding:6px 0;border-bottom:1px solid #e3eefb}.ok{color:#2bb673;font-weight:700}.wait{color:#aab}#rivals{position:absolute;top:56px;right:8px;background:rgba(255,255,255,.85);border-radius:12px;padding:6px 10px;font-size:13px;line-height:1.5;pointer-events:none;min-width:120px;box-shadow:0 3px 12px rgba(40,80,160,.15)}#rivals .dead{opacity:.4;text-decoration:line-through}#toast{position:absolute;top:60px;left:50%;transform:translateX(-50%);background:#fff;padding:8px 14px;border-radius:12px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.15);z-index:9}
-.ver{position:absolute;bottom:8px;right:12px;font-size:12px;color:#35507a;opacity:.8}
+h1{margin:0;font-size:clamp(34px,9vw,60px);color:#e6ecff;letter-spacing:1px;font-weight:800;text-shadow:0 0 18px rgba(34,211,238,.45)}
+.sub{color:#9aa8d6;font-weight:500}
+.btn{border:1px solid rgba(34,211,238,.55);border-radius:14px;padding:13px 34px;font-size:18px;font-weight:600;background:rgba(14,20,48,.8);color:#bff4ff;box-shadow:0 0 14px rgba(34,211,238,.15);min-width:220px;cursor:pointer}
+.btn.p{border-color:#ff2e88;color:#fff;background:linear-gradient(90deg,rgba(34,211,238,.25),rgba(255,46,136,.35));box-shadow:0 0 18px rgba(255,46,136,.25)}
+.btn:active{transform:scale(.97)}
+.card{background:rgba(14,20,48,.9);border:1px solid rgba(154,168,214,.25);color:#dfe6ff;border-radius:18px;padding:18px 20px;max-width:420px;text-align:left;line-height:1.5;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.field{border:1px solid rgba(154,168,214,.4);border-radius:12px;padding:12px 16px;font-size:18px;width:220px;text-align:center;background:rgba(7,11,31,.8);outline:none;color:#e6ecff}.field:focus{border-color:#22d3ee;box-shadow:0 0 12px rgba(34,211,238,.35)}.field.sm{width:120px;text-transform:uppercase;letter-spacing:3px;font-weight:700}.row{display:flex;gap:10px}.btn.sm{min-width:90px;padding:12px 18px}#menu{gap:10px;overflow:auto}.pl{display:flex;justify-content:space-between;gap:20px;padding:6px 0;border-bottom:1px solid rgba(154,168,214,.18)}.ok{color:#22d3ee;font-weight:700}.wait{color:#6f7db0}#rivals{position:absolute;top:56px;right:8px;background:rgba(14,20,48,.8);border:1px solid rgba(154,168,214,.25);color:#dfe6ff;border-radius:12px;padding:6px 10px;font-size:13px;line-height:1.5;pointer-events:none;min-width:120px;box-shadow:0 3px 12px rgba(40,80,160,.15)}#rivals .dead{opacity:.4;text-decoration:line-through}#toast{position:absolute;top:60px;left:50%;transform:translateX(-50%);background:#141c44;color:#fff;border:1px solid #ff2e88;padding:8px 14px;border-radius:12px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.15);z-index:9}
+.ver{position:absolute;bottom:8px;right:12px;font-size:12px;color:#6f7db0;opacity:.8}
 #hud{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:8px 10px;pointer-events:none;font-weight:700}
 #hud .r{display:flex;gap:8px;pointer-events:auto}
-.ic{width:42px;height:42px;border:0;border-radius:12px;background:#fff;color:#2c6fc4;font-size:18px;font-weight:800;box-shadow:0 3px 0 #9cc4ee}
+.ic{width:42px;height:42px;border:1px solid rgba(34,211,238,.45);border-radius:12px;background:rgba(14,20,48,.85);color:#bff4ff;font-size:16px}
 .big{font-size:22px}
 </style></head><body><div id="app">
 <canvas id="c"></canvas>
 <input id="ti" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="done" inputmode="text">
 <div id="hud" class="hid"><div id="hl"></div><div class="r"><button class="ic" id="mute2">♪</button><button class="ic" id="pauseB">❚❚</button></div></div>
-<div class="ov" id="menu"><h1>Type Royale</h1><div class="sub">Out-type your rivals. Last one standing wins!</div>
+<div class="ov" id="menu"><img src="logo/type_rivals_logo.png?v=1.04" alt="Type Rivals" style="width:min(92vw,520px);height:auto;max-height:24vh;object-fit:contain"><div class="sub">Out-type your rivals. Last one standing wins!</div>
 <input id="nick" class="field" maxlength="12" placeholder="Nickname" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 <button class="btn p" id="createB">Create Room</button><div class="row"><input id="code" class="field sm" maxlength="5" placeholder="CODE" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false"><button class="btn sm" id="joinB">Join</button></div><button class="btn" id="startB">Practice</button><button class="btn" id="howB">How to Play</button><button class="btn" id="muteB">Sound: On</button>
-<div class="sub" id="best"></div><div class="ver">v1.03</div></div>
-<div class="ov hid" id="how"><h1 style="font-size:36px">How to Play</h1><div class="card">
-⌨️ Tap the screen to open the keyboard (or just type on a PC).<br>🎯 Type the first letter of a word to lock onto it, then finish typing it.<br>🔥 Clear words in a row to build your combo multiplier.<br>❤️ You have 3 lives — a word hitting the ground costs one.<br>🚀 Each level makes words faster and longer.<br>⌫ Backspace releases the current target.</div>
+<div class="sub" id="best"></div><div class="ver">v1.04</div></div>
+<div class="ov hid" id="how"><h1 style="font-size:36px">How to Play</h1><div class="card"><b>Type Rivals</b> — type falling words before they land.<br>
+⌨️ Tap the screen to open the keyboard (or just type on a PC).<br>🎯 Type the first letter of a word to lock onto it, then finish typing it.<br>🔥 Clear words in a row to build your combo multiplier.<br>❤️ You have 3 lives — a word hitting the ground costs one.<br>🚀 Each level makes words faster and longer.<br>⌫ Backspace releases the current target.<br>⚔️ Online: create a room or join with a code. Combos and long words send red attack words to rivals — last one standing wins!</div>
 <button class="btn p" id="howBack">Got it</button></div>
-<div class="ov hid" id="lobby"><h1 style="font-size:38px">Lobby</h1><div class="sub">Room code</div><div id="lcode" style="font-size:42px;font-weight:800;letter-spacing:6px;color:#fff;text-shadow:0 3px 0 #4a8fd8"></div><div class="card" id="lplayers" style="min-width:260px"></div><div class="sub" id="lmsg"></div><button class="btn p" id="readyB">Ready</button><button class="btn p hid" id="goB">Start Battle</button><button class="btn" id="leaveB">Leave</button></div>
+<div class="ov hid" id="lobby"><h1 style="font-size:38px">Lobby</h1><div class="sub">Room code</div><div id="lcode" style="font-size:42px;font-weight:800;letter-spacing:6px;color:#22d3ee;text-shadow:0 0 14px rgba(34,211,238,.5)"></div><div class="card" id="lplayers" style="min-width:260px"></div><div class="sub" id="lmsg"></div><button class="btn p" id="readyB">Ready</button><button class="btn p hid" id="goB">Start Battle</button><button class="btn" id="leaveB">Leave</button></div>
 <div class="ov hid" id="res"><h1 style="font-size:40px" id="rtitle">Results</h1><div class="card" id="rlist" style="min-width:260px"></div><button class="btn p" id="rematchB">Rematch</button><button class="btn" id="rleaveB">Return to Menu</button></div>
 <div id="rivals" class="hid"></div><div id="toast" class="hid"></div>
 <div class="ov hid" id="pause"><h1 style="font-size:40px">Paused</h1><button class="btn p" id="resB">Resume</button><button class="btn" id="menuB">Return to Menu</button></div>
@@ -47,11 +47,11 @@ const W3="balloon rainbow sunrise thunder blossom crystal dolphin journey kingdo
 const W4="adventure butterfly chocolate fireworks lighthouse marshmallow playground skyscraper strawberry waterfall moonlight constellation celebration imagination wonderland snowflake hurricane".split(' ');
 const $=id=>document.getElementById(id),cv=$('c'),cx=cv.getContext('2d'),ti=$('ti');
 let mp=false,rng=Math.random,btime=0,cdT=0;
-let VW=0,VH=0,DPR=1,state='menu',words=[],parts=[],target=null,score=0,lives=3,combo=0,level=1,cleared=0,spawnT=0,last=0,muted=localStorage.getItem('sk_mute')==='1',shake=0,clouds=[];
+let VW=0,VH=0,DPR=1,state='menu',words=[],parts=[],target=null,score=0,lives=3,combo=0,level=1,cleared=0,spawnT=0,last=0,muted=localStorage.getItem('sk_mute')==='1',shake=0,clouds=[],stars=[];
 function resize(){const vv=window.visualViewport;VW=vv?vv.width:innerWidth;VH=vv?vv.height:innerHeight;DPR=Math.min(devicePixelRatio||1,2);
  const a=$('app');a.style.width=VW+'px';a.style.height=VH+'px';if(vv)a.style.top=vv.offsetTop+'px';
  cv.width=VW*DPR;cv.height=VH*DPR;cx.setTransform(DPR,0,0,DPR,0,0);
- if(!clouds.length)for(let i=0;i<6;i++)clouds.push({x:Math.random(),y:Math.random()*.7,s:.6+Math.random()*.8,v:.004+Math.random()*.008});}
+ if(!stars.length)for(let i=0;i<60;i++)stars.push({x:Math.random(),y:Math.random()*.85,r:.5+Math.random()*1.1,p:Math.random()*6,s:.3+Math.random()*.8});}
 addEventListener('resize',resize);if(window.visualViewport){visualViewport.addEventListener('resize',resize);visualViewport.addEventListener('scroll',resize);}resize();
 // audio
 let ac=null;function tone(f,d,t='sine',v=.12,sl=0){if(muted)return;try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();const o=ac.createOscillator(),g=ac.createGain();o.type=t;o.frequency.value=f;if(sl)o.frequency.exponentialRampToValueAtTime(sl,ac.currentTime+d);g.gain.setValueAtTime(v,ac.currentTime);g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+d);o.connect(g).connect(ac.destination);o.start();o.stop(ac.currentTime+d);}catch(e){}}
@@ -86,21 +86,22 @@ $('muteB').onclick=()=>setMute(!muted);$('mute2').onclick=()=>{setMute(!muted);i
 function gameOver(){state='over';ti.blur();sfx.over();const nb=score>best();if(nb)localStorage.setItem('sk_best',score);
  $('ovs').innerHTML=`Score: <b>${score}</b><br>Level: ${level} · Words: ${cleared}<br>${nb?'🏆 New high score!':'Best: '+best()}`;show('over');}
 function rr(x,y,w,h,r){cx.beginPath();cx.roundRect?cx.roundRect(x,y,w,h,r):cx.rect(x,y,w,h);}
-function draw(dt){const g=cx.createLinearGradient(0,0,0,VH);g.addColorStop(0,'#8fd3ff');g.addColorStop(1,'#ffe1f0');cx.fillStyle=g;cx.fillRect(0,0,VW,VH);
- cx.fillStyle='rgba(255,255,255,.8)';for(const c of clouds){c.x+=c.v*dt;if(c.x>1.2)c.x=-.2;const x=c.x*VW,y=c.y*VH,s=c.s*40;cx.beginPath();cx.arc(x,y,s,0,7);cx.arc(x+s,y+6,s*.8,0,7);cx.arc(x-s,y+8,s*.7,0,7);cx.fill();}
- cx.fillStyle='#9be38f';rr(0,VH-22,VW,22,0);cx.fill();cx.fillStyle='#7ccf70';cx.fillRect(0,VH-22,VW,4);
+function draw(dt){const g=cx.createLinearGradient(0,0,0,VH);g.addColorStop(0,'#070b1f');g.addColorStop(1,'#141b3f');cx.fillStyle=g;cx.fillRect(0,0,VW,VH);
+ const mx=VW*.82,my=Math.min(VH*.12,90),mg=cx.createRadialGradient(mx,my,0,mx,my,90);mg.addColorStop(0,'rgba(200,220,255,.16)');mg.addColorStop(1,'rgba(200,220,255,0)');cx.fillStyle=mg;cx.fillRect(mx-90,my-90,180,180);cx.fillStyle='#d8e2ff';cx.globalAlpha=.85;cx.beginPath();cx.arc(mx,my,22,0,7);cx.fill();cx.globalAlpha=1;cx.fillStyle='#0a0f29';cx.beginPath();cx.arc(mx+9,my-5,19,0,7);cx.fill();
+ for(const st of stars){st.p+=dt*st.s;cx.globalAlpha=.25+.35*(0.5+0.5*Math.sin(st.p));cx.fillStyle='#cfe0ff';cx.beginPath();cx.arc(st.x*VW,st.y*VH,st.r,0,7);cx.fill()}cx.globalAlpha=1;
+ const gl=cx.createLinearGradient(0,0,VW,0);gl.addColorStop(0,'rgba(34,211,238,.7)');gl.addColorStop(1,'rgba(255,46,136,.7)');cx.fillStyle='rgba(20,27,63,.9)';cx.fillRect(0,VH-22,VW,22);cx.fillStyle=gl;cx.fillRect(0,VH-22,VW,2);
  if(state==='menu'||state==='how'||state==='lobby')return;
  cx.save();if(shake>0)cx.translate((Math.random()-.5)*8,0);
  cx.font='700 22px system-ui';cx.textBaseline='middle';
- for(const w of words){const t=w===target;cx.fillStyle=w.red?(t?'#ffe3e3':'#ffd0d0'):t?'#fff':'rgba(255,255,255,.88)';cx.shadowColor=`hsla(${w.hue},70%,50%,.35)`;cx.shadowBlur=t?16:6;rr(w.x,w.y-18,w.w,36,12);cx.fill();cx.shadowBlur=0;
-  if(t){cx.strokeStyle=`hsl(${w.hue},80%,60%)`;cx.lineWidth=3;cx.stroke();}
-  let x=w.x+12;for(let i=0;i<w.t.length;i++){cx.fillStyle=i<w.n?`hsl(${w.hue},80%,55%)`:w.red?'#d9263a':'#2a3a55';cx.fillText(w.t[i],x,w.y+1);x+=cx.measureText(w.t[i]).width;}}
- for(const p of parts){if(p.lvl){cx.globalAlpha=Math.min(1,p.l);cx.fillStyle='#fff';cx.font='800 40px system-ui';cx.textAlign='center';cx.shadowColor='#4a8fd8';cx.shadowBlur=12;cx.fillText('Level '+level+'!',VW/2,VH*.4);cx.textAlign='left';cx.shadowBlur=0;continue}
-  cx.globalAlpha=Math.max(0,p.l);cx.fillStyle=`hsl(${p.h},85%,62%)`;cx.beginPath();cx.arc(p.x,p.y,p.r*p.l,0,7);cx.fill();}
+ for(const w of words){const t=w===target;cx.fillStyle=w.red?'rgba(60,10,36,.94)':'rgba(16,22,52,.94)';cx.shadowColor=w.red?'rgba(255,46,136,.55)':t?'rgba(34,211,238,.6)':'rgba(0,0,0,.4)';cx.shadowBlur=t?16:6;rr(w.x,w.y-18,w.w,36,12);cx.fill();cx.shadowBlur=0;
+  cx.strokeStyle=w.red?'#ff2e88':t?'#22d3ee':'rgba(154,168,214,.35)';cx.lineWidth=t?2.5:1;cx.stroke();
+  let x=w.x+12;for(let i=0;i<w.t.length;i++){cx.fillStyle=i<w.n?(w.red?'#ffb3d6':'#22d3ee'):w.red?'#ff6aa8':'#eef2ff';cx.fillText(w.t[i],x,w.y+1);x+=cx.measureText(w.t[i]).width;}}
+ for(const p of parts){if(p.lvl){cx.globalAlpha=Math.min(1,p.l);cx.fillStyle='#fff';cx.font='800 40px system-ui';cx.textAlign='center';cx.shadowColor='#22d3ee';cx.shadowBlur=12;cx.fillText('Level '+level+'!',VW/2,VH*.4);cx.textAlign='left';cx.shadowBlur=0;continue}
+  cx.globalAlpha=Math.max(0,p.l);cx.fillStyle=(p.h|0)%2?'#22d3ee':'#ff2e88';cx.beginPath();cx.arc(p.x,p.y,p.r*p.l,0,7);cx.fill();}
  cx.globalAlpha=1;cx.restore();
- if(state==='cd'){cx.fillStyle='#fff';cx.font='800 90px system-ui';cx.textAlign='center';cx.shadowColor='#4a8fd8';cx.shadowBlur=16;cx.fillText(Math.ceil(cdT)||'GO',VW/2,VH*.42);cx.shadowBlur=0;cx.textAlign='left'}
- if(state==='spec'){cx.fillStyle='rgba(35,50,74,.75)';cx.font='800 28px system-ui';cx.textAlign='center';cx.fillText('Eliminated — spectating',VW/2,VH*.45);cx.textAlign='left'}
- $('hl').innerHTML=`<span style="color:#ff5d8f">${'♥'.repeat(lives)}<span style="opacity:.25">${'♥'.repeat(3-lives)}</span></span> &nbsp;${score} &nbsp;<span style="color:#2c6fc4">Lv ${level}</span>${combo>=5?` &nbsp;<span style="color:#ff8a00">x${1+Math.floor(combo/5)}</span>`:''}`;}
+ if(state==='cd'){cx.fillStyle='#fff';cx.font='800 90px system-ui';cx.textAlign='center';cx.shadowColor='#ff2e88';cx.shadowBlur=16;cx.fillText(Math.ceil(cdT)||'GO',VW/2,VH*.42);cx.shadowBlur=0;cx.textAlign='left'}
+ if(state==='spec'){cx.fillStyle='rgba(230,236,255,.8)';cx.font='800 28px system-ui';cx.textAlign='center';cx.fillText('Eliminated — spectating',VW/2,VH*.45);cx.textAlign='left'}
+ $('hl').innerHTML=`<span style="color:#ff5d8f">${'♥'.repeat(lives)}<span style="opacity:.25">${'♥'.repeat(3-lives)}</span></span> &nbsp;${score} &nbsp;<span style="color:#22d3ee">Lv ${level}</span>${combo>=5?` &nbsp;<span style="color:#ff8a00">x${1+Math.floor(combo/5)}</span>`:''}`;}
 function loop(now){const dt=Math.min(.05,(now-last)/1000||0);last=now;
  if(state==='cd'){cdT-=dt;if(cdT<=0){state='play';show(null);focusKb()}}
  if(state==='play'||state==='spec')btime+=dt;
@@ -110,7 +111,7 @@ function loop(now){const dt=Math.min(.05,(now-last)/1000||0);last=now;
  if(state!=='pause'){for(let i=parts.length-1;i>=0;i--){const p=parts[i];if(p.lvl){p.l-=dt;}else{p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=400*dt;p.l-=dt*1.4;}if(p.l<=0)parts.splice(i,1)}shake-=dt;}
  draw(dt);requestAnimationFrame(loop);}
 // ===== Multiplayer (PeerJS, host-authoritative) =====
-const PFX='typeroyale-v1-',ALPH='ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+const PFX='typerivals-v1-',ALPH='ABCDEFGHJKMNPQRSTUVWXYZ23456789';
 let peer=null,isHost=false,conns={},hostConn=null,myId='',players=[],roomCode='',inBattle=false,elimOrder=[];
 function toast(t){const e=$('toast');e.textContent=t;e.classList.remove('hid');clearTimeout(toast.h);toast.h=setTimeout(()=>e.classList.add('hid'),1800);}
 function nick(){let n=$('nick').value.trim().slice(0,12)||'Player'+(Math.random()*900+100|0);localStorage.setItem('tr_nick',n);return n}
